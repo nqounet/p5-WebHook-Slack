@@ -1,0 +1,4 @@
+name = "WebHook-Slack"
+# badges = ["travis"]
+module_maker="ModuleBuildTiny"
+
