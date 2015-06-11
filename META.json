@@ -1,5 +1,5 @@
 {
-   "abstract" : "It's new $module",
+   "abstract" : "Client for Incoming WebHooks of Slack.",
    "author" : [
       "nqounet <mail@nqou.net>"
    ],
@@ -42,15 +42,30 @@
       },
       "runtime" : {
          "requires" : {
+            "HTTP::Tiny" : "0",
+            "JSON::MaybeXS" : "0",
+            "Moo" : "0",
             "perl" : "5.008001"
          }
       },
       "test" : {
          "requires" : {
+            "Test::Fatal" : "0",
             "Test::More" : "0.98"
          }
       }
    },
    "release_status" : "unstable",
-   "version" : "0.01"
+   "resources" : {
+      "bugtracker" : {
+         "web" : "https://github.com/nqounet/p5-WebHook-Slack/issues"
+      },
+      "homepage" : "https://github.com/nqounet/p5-WebHook-Slack",
+      "repository" : {
+         "type" : "git",
+         "url" : "git://github.com/nqounet/p5-WebHook-Slack.git",
+         "web" : "https://github.com/nqounet/p5-WebHook-Slack"
+      }
+   },
+   "version" : "v0.1.0"
 }
