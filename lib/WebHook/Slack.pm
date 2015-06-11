@@ -34,12 +34,27 @@ sub BUILDARGS {
 sub send {
     my $self   = shift;
     my $text   = shift;
+    my $params = $self->_build_params($text);
+    my $form   = $self->_build_form($params);
+    return $self->client->post_form($self->url, $form);
+}
+
+sub _build_params {
+    my $self   = shift;
+    my $text   = shift;
     my $params = +{text => $text};
     for my $key (@extras) {
         $params->{$key} = $self->$key if defined $self->$key;
     }
+    return $params;
+}
+
+sub _build_form {
+    my $self    = shift;
+    my $params  = shift;
     my $payload = $self->json->encode($params);
-    return $self->client->post_form($self->url, +{payload => $payload});
+    my $form    = +{payload => $payload};
+    return $form;
 }
 
 1;
